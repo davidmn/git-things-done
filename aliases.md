@@ -17,17 +17,19 @@ alias.aliases config --get-regexp alias
 ## lg
 
 ```
-git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --oneline -10"
 ```
 
 Gives a pretty summary of the git history a bit like this:
 
 ```
 $ git lg
-*   e52311c - (HEAD, origin/develop, origin/HEAD, develop) Merged in feature/jira-001 (pull request #123) (11 hours ago) <Alice>
+*   64125fb (HEAD -> feature/JIRA-000, origin/feature/JIRA-000) Merge develop
 |\
-| * 313ade1 - (origin/feature/jira-001) jira-001: Add customer view (21 hours ago) <Alice>
-
+| *   7aaa902 (origin/develop, origin/HEAD, develop) Merged in feature/JIRA-000 (pull request #3319)
+| |\
+| | * 314zf51 JIRA-000: Do the thing!
+...
 ```
 
 ## conflicts
