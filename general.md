@@ -34,3 +34,30 @@ git config --global push.default current
 ```
 
 Push again and all should be well.
+
+## Set your git editor to something sensible
+
+You want a GUI for your git associated editor.
+
+For VSCode run:
+
+```
+git config --global core.editor "code --wait"
+```
+
+For Sublime run:
+
+```
+git config --global core.editor "subl -n -w"
+```
+
+## Set a merge tool
+
+To use VSCode as your merge/diff tool run the following:
+
+```
+git config --global merge.tool vscode
+git config --global mergetool.vscode.cmd "code --wait $MERGED"
+git config --global diff.tool vscode
+git config --global difftool.vscode.cmd "code --wait --diff $LOCAL $REMOTE"
+```
