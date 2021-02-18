@@ -44,3 +44,19 @@ $ git conflicts
 Views/Common/Implementation/CustomerDetailsView.xaml
 Views/Common/Implementation/HomeView.xaml
 ```
+
+## bash aliases
+
+Add the following to ~/.bash_aliases:
+
+```
+alias gt='git commit -am '
+```
+
+Then make sure your ~/.bashrc adds the aliases file by sticking this in it:
+
+```
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+```
