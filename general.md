@@ -61,3 +61,22 @@ git config --global mergetool.vscode.cmd "code --wait $MERGED"
 git config --global diff.tool vscode
 git config --global difftool.vscode.cmd "code --wait --diff $LOCAL $REMOTE"
 ```
+
+## Multiple remotes
+
+A very specific scenario I found:
+
+1) I have a single git repo that creates a static site (davidmn.org) with Hugo and pushes it to GitHub Pages
+2) I want a second domain (megaslippers.net) that has the same content
+3) I copied the repo (can't fork your own things in github?) and set-up github pages again
+4) I want to push to both repos at the same time
+
+It's easy:
+
+```
+git remote remove origin
+git remote add origin git@github.com:davidmn/davidmn.org.git  
+git remote set-url --add --push origin git@github.com:davidmn/megaslippers.net.git
+git remote set-url --add --push origin git@github.com:davidmn/davidmn.org.git 
+git push --set-upstream origin main   
+```
